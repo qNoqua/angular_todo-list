@@ -8,9 +8,9 @@ import { IItem } from 'src/app/interfaces/items.interface';
 })
 
 export class ItemsService {
-  private readonly items = new BehaviorSubject<IItem[]>([{id: Date.now(), title: 'Title', description: 'Item descrioption'}]);
+  private readonly items = new BehaviorSubject<IItem[]>([{id: Date.now(), title: 'Первый пост', description: 'Описание поста'}]);
   readonly items$ = this.items.asObservable()
-  constructor() { 
+  constructor() {
   }
   addItem(item: IItem): void {
     const AllItems = this.items.getValue()

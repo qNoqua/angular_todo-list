@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ItemsComponent } from './items.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './items.router';
+import { CardComponent } from './card/card.component';
 
 
 @NgModule({
   declarations: [
-    ItemsComponent
+    ItemsComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,

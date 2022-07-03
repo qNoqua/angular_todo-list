@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IItem } from 'src/app/interfaces/items.interface';
+import { ItemsService } from 'src/app/services/items/items.service';
 
 @Component({
   selector: 'app-card',
@@ -6,6 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  title = 'Card title';
-  description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum maiores impedit rem neque? Cum consectetur officiis nisi quas architecto. Autem harum laboriosam similique praesentium aspernatur fuga labore sit eaque possimus!'
+  constructor (private itemsService: ItemsService) {}
+  removeItem(id: number) {
+    this.itemsService.removeItem(id)
+    console.log('remove')
+  }
+  @Input() item: IItem = {id: 0, title: '', description: ''}
 }
